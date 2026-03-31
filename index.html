@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ფიროსმანი — ციფრული მენიუ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="image/logo.jpg" alt="Logo">
+                <span class="nav-brand-name">ფიროსმანი</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#cold" data-key="nav_cold">ცივი კერძები</a></li>
+                <li><a href="#hot" data-key="nav_hot">ცხელი კერძები</a></li>
+                <li><a href="#tsomeuli" data-key="nav_tsomeuli">ცომეული</a></li>
+                <li><a href="#drinks" data-key="nav_drinks">სასმელები</a></li>
+            </ul>
+
+            <div class="lang-dropdown">
+                <div class="selected-lang" id="current-lang-display">
+                    <img src="https://flagcdn.com/w40/ge.png" alt="GE">
+                    <span>GEO</span>
+                </div>
+                <div class="lang-options" id="langOptions">
+                    <div class="lang-option" onclick="changeLang('ka', 'https://flagcdn.com/w40/ge.png', 'GEO')">
+                        <img src="https://flagcdn.com/w40/ge.png" alt="GE"> GEO
+                    </div>
+                    <div class="lang-option" onclick="changeLang('en', 'https://flagcdn.com/w40/gb.png', 'ENG')">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="EN"> ENG
+                    </div>
+                    <div class="lang-option" onclick="changeLang('ru', 'https://flagcdn.com/w40/ru.png', 'RUS')">
+                        <img src="https://flagcdn.com/w40/ru.png" alt="RU"> RUS
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="main-header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1 class="hero-title" data-key="hero_title">კეთილი იყოს თქვენი მობრძანება</h1>
+            <p class="tagline" data-key="hero_tagline">ქართული გემოს დუქანი</p>
+            <div class="pirosmani-signature">N. Pirosmanishvili</div>
+        </div>
+    </header>
+
+    <main class="menu-container">
+        <section id="cold" class="menu-category">
+            <h2 class="category-title" data-key="nav_cold">ცივი კერძები</h2>
+            <div class="menu-items-grid" id="cold-items"></div>
+        </section>
+
+        <section id="hot" class="menu-category">
+            <h2 class="category-title" data-key="nav_hot">ცხელი კერძები</h2>
+            <div class="menu-items-grid" id="hot-items"></div>
+        </section>
+
+        <section id="tsomeuli" class="menu-category">
+            <h2 class="category-title" data-key="nav_tsomeuli">ცომეული</h2>
+            <div class="menu-items-grid" id="tsomeuli-items"></div>
+        </section>
+
+        <section id="drinks" class="menu-category">
+            <h2 class="category-title" data-key="nav_drinks">სასმელები</h2>
+            <div class="menu-items-grid" id="drinks-items"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p data-key="footer_text">&copy; 2026 რესტორანი „ფიროსმანი“</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
