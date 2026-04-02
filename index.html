@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ფიროსმანი — ციფრული მენიუ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,16 +13,16 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
+            <div class="nav-logo" onclick="scrollToTop()" style="cursor: pointer;">
                 <img src="image/logo.jpg" alt="Logo">
                 <span class="nav-brand-name">ფიროსმანი</span>
             </div>
 
             <ul class="nav-links">
-                <li><a href="#cold" data-key="nav_cold">ცივი კერძები</a></li>
-                <li><a href="#hot" data-key="nav_hot">ცხელი კერძები</a></li>
+                <li><a href="#cold" data-key="nav_cold">ცივი</a></li>
+                <li><a href="#hot" data-key="nav_hot">ცხელი</a></li>
                 <li><a href="#tsomeuli" data-key="nav_tsomeuli">ცომეული</a></li>
-                <li><a href="#drinks" data-key="nav_drinks">სასმელები</a></li>
+                <li><a href="#drinks" data-key="nav_drinks">სასმელი</a></li>
             </ul>
 
             <div class="lang-dropdown">
@@ -43,11 +45,11 @@
         </div>
     </nav>
 
-    <header class="main-header">
+    <header class="main-header" id="home">
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="hero-title" data-key="hero_title">კეთილი იყოს თქვენი მობრძანება</h1>
-            <p class="tagline" data-key="hero_tagline">ქართული გემო </p>
+            <p class="tagline" data-key="hero_tagline">ქართული გემო</p>
             <div class="pirosmani-signature">N. Pirosmanishvili</div>
         </div>
     </header>
