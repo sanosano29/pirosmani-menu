@@ -1,41 +1,30 @@
 const translations = {
-    ka: {
-        nav_cold: "ცივი", nav_hot: "ცხელი", nav_tsomeuli: "ცომეული", nav_drinks: "სასმელი",
-        hero_title: "კეთილი იყოს თქვენი მობრძანება", hero_tagline: "ქართული გემო", footer_text: "© 2026 რესტორანი „ფიროსმანი“"
-    },
-    en: {
-        nav_cold: "Cold", nav_hot: "Hot", nav_tsomeuli: "Bakery", nav_drinks: "Drinks",
-        hero_title: "Welcome to Our Tavern", hero_tagline: "Georgian Taste", footer_text: "© 2026 Pirosmani Restaurant"
-    },
-    ru: {
-        nav_cold: "Холодное", nav_hot: "Горячее", nav_tsomeuli: "Выпечка", nav_drinks: "Напитки",
-        hero_title: "Добро пожаловать в дукан", hero_tagline: "Грузинский вкус", footer_text: "© 2026 Ресторан «Пиросмани»"
-    }
+    ka: { nav_cold: "ცივი", nav_hot: "ცხელი", nav_tsomeuli: "ცომეული", nav_drinks: "სასმელი", menu_label: "მენიუ", hero_title: "კეთილი იყოს თქვენი მობრძანება", hero_tagline: "ქართული გემო", footer_text: "© 2026 რესტორანი „ფიროსმანი“" },
+    en: { nav_cold: "Cold", nav_hot: "Hot", nav_tsomeuli: "Bakery", nav_drinks: "Drinks", menu_label: "Menu", hero_title: "Welcome to Our Tavern", hero_tagline: "Georgian Taste", footer_text: "© 2026 Pirosmani Restaurant" },
+    ru: { nav_cold: "Холодное", nav_hot: "Горячее", nav_tsomeuli: "Выпечка", nav_drinks: "Напитки", menu_label: "Меню", hero_title: "Добро пожаловать в дукан", hero_tagline: "Грузинский вкус", footer_text: "© 2026 Ресторан «Пиросмани»" }
 };
 
 const menuItemsData = {
     cold: [
-        { name: {ka: "ფხალის ასორტი", en: "Assorted Pkhali", ru: "Ассорти Пхали"}, price: "22.00 ₾", desc: {ka: "ისპანახი, ჭარხალი, სტაფილო ნიგვზით", en: "Spinach, beetroot, carrot with walnuts", ru: "Шпинат, свекла, морковь с орехами"} },
-        { name: {ka: "ყველის დაფა", en: "Cheese Board", ru: "Сырное ассорти"}, price: "28.00 ₾", desc: {ka: "იმერული, სულგუნი, გუდა", en: "Imeretian, Sulguni, Guda", ru: "Имеретинский, сулугуни, гуда"} }
+        { name: {ka: "ფხალის ასორტი", en: "Assorted Pkhali", ru: "Ассорти Пхали"}, price: "22₾", desc: {ka: "ისპანახი, ჭარხალი, სტაფილო ნიგვზით", en: "Spinach, beetroot, carrot with walnuts", ru: "Шпинат, свекла, морковь с орехами"} },
+        { name: {ka: "ყველის დაფა", en: "Cheese Board", ru: "Сырное ассорти"}, price: "28₾", desc: {ka: "იმერული, სულგუნი, გუდა", en: "Imeretian, Sulguni, Guda", ru: "Имеретинский, сулугуни, гуда"} },
+        { name: {ka: "ბადრიჯანი ნიგვზით", en: "Eggplant with Walnuts", ru: "Баклажаны с орехами"}, price: "15₾", desc: {ka: "ნიგვზის საკაზმით", en: "Walnut filling", ru: "С ореховой начинкой"} }
     ],
     hot: [
-        { name: {ka: "ხინკალი", en: "Khinkali", ru: "Хинкали"}, price: "1.50 ₾", desc: {ka: "ტრადიციული ხორცით და მწვანილით", en: "Traditional with meat and herbs", ru: "Традиционные с мясом и зеленью"} },
-        { name: {ka: "შქმერული", en: "Shkmeruli", ru: "Шкмерули"}, price: "28.00 ₾", desc: {ka: "წიწილა ნივრიან სოუსში", en: "Chicken in garlic sauce", ru: "Цыпленок в чесночном соусе"} }
+        { name: {ka: "ხინკალი", en: "Khinkali", ru: "Хинкали"}, price: "1.5₾", desc: {ka: "ხორცით და მწვანილით", en: "Meat and herbs", ru: "С мясом и зеленью"} },
+        { name: {ka: "შქმერული", en: "Shkmeruli", ru: "Шкмерули"}, price: "28₾", desc: {ka: "ნივრიან სოუსში", en: "Garlic sauce", ru: "В чесночном соусе"} }
     ],
     tsomeuli: [
-        { name: {ka: "ხაჭაპური", en: "Khachapuri", ru: "Хачапури"}, price: "18.00 ₾", desc: {ka: "იმერული ყველით და კარაქით", en: "With Imeretian cheese and butter", ru: "С имеретинским сыром и маслом"} },
-        { name: {ka: "აჭარული", en: "Adjaruli", ru: "Аджарули"}, price: "18.00 ₾", desc: {ka: "ნედლი ყველით და კვერცხით", en: "With fresh cheese and egg", ru: "Со свежим сыром и яйцом"} }
+        { name: {ka: "ხაჭაპური", en: "Khachapuri", ru: "Хачапури"}, price: "18₾", desc: {ka: "იმერული ყველით", en: "Imeretian cheese", ru: "Имеретинский сыр"} },
+        { name: {ka: "აჭარული", en: "Adjaruli", ru: "Аджарули"}, price: "18₾", desc: {ka: "კვერცხით და კარაქით", en: "Egg and butter", ru: "С яйцом и маслом"} }
     ],
     drinks: [
-        { name: {ka: "ღვინო", en: "Wine", ru: "Вино"}, price: "35.00 ₾", desc: {ka: "ქვევრის საფერავი", en: "Qvevri Saperavi", ru: "Саперави из квеври"} },
-        { name: {ka: "ლიმონათი", en: "Lemonade", ru: "Лимонад"}, price: "4.00 ₾", desc: {ka: "ნატახტარის ასორტი", en: "Natakhtari assorted", ru: "Натахтари в ассортименте"} }
+        { name: {ka: "ღვინო", en: "Wine", ru: "Вино"}, price: "35₾", desc: {ka: "ქვევრის საფერავი", en: "Qvevri Saperavi", ru: "Саперави из квеври"} },
+        { name: {ka: "ლიმონათი", en: "Lemonade", ru: "Лимонад"}, price: "4₾", desc: {ka: "ნატახტარი", en: "Natakhtari", ru: "Натахтари"} }
     ]
 };
 
-// ზემოთ ასვლის ფუნქცია
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
 function renderMenu(lang) {
     for (let cat in menuItemsData) {
@@ -53,8 +42,7 @@ function renderMenu(lang) {
                     </div>
                     <p class="item-description">${item.desc[lang]}</p>
                 </div>
-            </article>
-        `).join('');
+            </article>`).join('');
     }
 }
 
@@ -63,17 +51,9 @@ function changeLang(lang, flagSrc, langText) {
         const key = el.getAttribute('data-key');
         if (translations[lang][key]) el.textContent = translations[lang][key];
     });
-
-    const display = document.getElementById('current-lang-display');
-    display.querySelector('img').src = flagSrc;
-    display.querySelector('span').textContent = langText;
-
+    document.getElementById('current-flag').src = flagSrc;
+    document.getElementById('current-text').textContent = langText;
     renderMenu(lang);
-    
-    const options = document.getElementById('langOptions');
-    options.style.display = 'none';
-    setTimeout(() => { options.style.display = ''; }, 300);
-
     localStorage.setItem('p_lang', lang);
     localStorage.setItem('p_flag', flagSrc);
     localStorage.setItem('p_text', langText);
@@ -83,22 +63,19 @@ window.onload = () => {
     const savedLang = localStorage.getItem('p_lang') || 'ka';
     const savedFlag = localStorage.getItem('p_flag') || 'https://flagcdn.com/w40/ge.png';
     const savedText = localStorage.getItem('p_text') || 'GEO';
-    
     changeLang(savedLang, savedFlag, savedText);
 
-    // Smooth Scroll მობილურისთვისაც
-    document.querySelectorAll('.nav-links a, .navbar a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    // Mobile Menu Toggle
+    const menuTrigger = document.getElementById('menu-trigger');
+    const navLinks = document.getElementById('navLinks');
+    menuTrigger.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const offset = window.innerWidth < 768 ? 70 : 80;
-                window.scrollTo({
-                    top: targetElement.offsetTop - offset,
-                    behavior: 'smooth'
-                });
-            }
+            navLinks.classList.remove('active');
+            const target = document.querySelector(link.getAttribute('href'));
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
         });
     });
 };
