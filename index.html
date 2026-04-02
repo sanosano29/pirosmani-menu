@@ -13,24 +13,29 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo" onclick="scrollToTop()" style="cursor: pointer;">
+            <div class="nav-logo" onclick="scrollToTop()">
                 <img src="image/logo.jpg" alt="Logo">
                 <span class="nav-brand-name">ფიროსმანი</span>
             </div>
 
-            <ul class="nav-links">
-                <li><a href="#cold" data-key="nav_cold">ცივი</a></li>
-                <li><a href="#hot" data-key="nav_hot">ცხელი</a></li>
-                <li><a href="#tsomeuli" data-key="nav_tsomeuli">ცომეული</a></li>
-                <li><a href="#drinks" data-key="nav_drinks">სასმელი</a></li>
-            </ul>
+            <div class="menu-dropdown">
+                <div class="selected-menu" id="menu-trigger">
+                    <span data-key="menu_label">მენიუ</span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#cold" data-key="nav_cold">ცივი</a></li>
+                    <li><a href="#hot" data-key="nav_hot">ცხელი</a></li>
+                    <li><a href="#tsomeuli" data-key="nav_tsomeuli">ცომეული</a></li>
+                    <li><a href="#drinks" data-key="nav_drinks">სასმელი</a></li>
+                </ul>
+            </div>
 
             <div class="lang-dropdown">
-                <div class="selected-lang" id="current-lang-display">
-                    <img src="https://flagcdn.com/w40/ge.png" alt="GE">
-                    <span>GEO</span>
+                <div class="selected-lang">
+                    <img id="current-flag" src="https://flagcdn.com/w40/ge.png" alt="GE">
+                    <span id="current-text">GEO</span>
                 </div>
-                <div class="lang-options" id="langOptions">
+                <div class="lang-options">
                     <div class="lang-option" onclick="changeLang('ka', 'https://flagcdn.com/w40/ge.png', 'GEO')">
                         <img src="https://flagcdn.com/w40/ge.png" alt="GE"> GEO
                     </div>
@@ -45,7 +50,7 @@
         </div>
     </nav>
 
-    <header class="main-header" id="home">
+    <header class="main-header">
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="hero-title" data-key="hero_title">კეთილი იყოს თქვენი მობრძანება</h1>
@@ -57,22 +62,22 @@
     <main class="menu-container">
         <section id="cold" class="menu-category">
             <h2 class="category-title" data-key="nav_cold">ცივი კერძები</h2>
-            <div class="menu-items-grid" id="cold-items"></div>
+            <div class="horizontal-scroll" id="cold-items"></div>
         </section>
 
         <section id="hot" class="menu-category">
             <h2 class="category-title" data-key="nav_hot">ცხელი კერძები</h2>
-            <div class="menu-items-grid" id="hot-items"></div>
+            <div class="horizontal-scroll" id="hot-items"></div>
         </section>
 
         <section id="tsomeuli" class="menu-category">
             <h2 class="category-title" data-key="nav_tsomeuli">ცომეული</h2>
-            <div class="menu-items-grid" id="tsomeuli-items"></div>
+            <div class="horizontal-scroll" id="tsomeuli-items"></div>
         </section>
 
         <section id="drinks" class="menu-category">
             <h2 class="category-title" data-key="nav_drinks">სასმელები</h2>
-            <div class="menu-items-grid" id="drinks-items"></div>
+            <div class="horizontal-scroll" id="drinks-items"></div>
         </section>
     </main>
 
