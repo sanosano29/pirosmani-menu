@@ -31,11 +31,11 @@
             </div>
 
             <div class="lang-dropdown">
-                <div class="selected-lang">
-                    <img id="current-flag" src="https://flagcdn.com/w40/ge.png" alt="GE">
-                    <span id="current-text">GEO</span>
+                <div class="selected-lang" id="current-lang-display">
+                    <img src="https://flagcdn.com/w40/ge.png" alt="GE">
+                    <span>GEO</span>
                 </div>
-                <div class="lang-options">
+                <div class="lang-options" id="langOptions">
                     <div class="lang-option" onclick="changeLang('ka', 'https://flagcdn.com/w40/ge.png', 'GEO')">
                         <img src="https://flagcdn.com/w40/ge.png" alt="GE"> GEO
                     </div>
@@ -50,7 +50,7 @@
         </div>
     </nav>
 
-    <header class="main-header">
+    <header class="main-header" id="home">
         <div class="overlay"></div>
         <div class="header-content">
             <h1 class="hero-title" data-key="hero_title">კეთილი იყოს თქვენი მობრძანება</h1>
