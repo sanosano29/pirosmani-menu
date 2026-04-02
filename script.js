@@ -1,57 +1,277 @@
 const translations = {
-    ka: { nav_cold: "ცივი", nav_hot: "ცხელი", nav_tsomeuli: "ცომეული", nav_drinks: "სასმელი", menu_label: "მენიუ", hero_title: "კეთილი იყოს თქვენი მობრძანება", hero_tagline: "ქართული გემო", footer_text: "© 2026 რესტორანი „ფიროსმანი“" },
-    en: { nav_cold: "Cold", nav_hot: "Hot", nav_tsomeuli: "Bakery", nav_drinks: "Drinks", menu_label: "Menu", hero_title: "Welcome to Our Tavern", hero_tagline: "Georgian Taste", footer_text: "© 2026 Pirosmani Restaurant" },
-    ru: { nav_cold: "Холодное", nav_hot: "Горячее", nav_tsomeuli: "Выпечка", nav_drinks: "Напитки", menu_label: "Меню", hero_title: "Добро пожаловать в дукан", hero_tagline: "Грузинский вкус", footer_text: "© 2026 Ресторан «Пиросмани»" }
+    ka: {
+        nav_cold: "ცივი", nav_hot: "ცხელი", nav_tsomeuli: "ცომეული", nav_drinks: "სასმელი", 
+        menu_label: "მენიუ", hero_title: "კეთილი იყოს თქვენი მობრძანება", hero_tagline: "ქართული გემო", 
+        footer_text: "© 2026 რესტორანი „ფიროსმანი“"
+    },
+    en: {
+        nav_cold: "Cold Starters", nav_hot: "Main Courses", nav_tsomeuli: "Bakery", nav_drinks: "Beverages", 
+        menu_label: "Menu", hero_title: "Welcome to Our Tavern", hero_tagline: "Authentic Georgian Taste", 
+        footer_text: "© 2026 Pirosmani Restaurant"
+    },
+    ru: {
+        nav_cold: "Холодные закуски", nav_hot: "Горячие блюда", nav_tsomeuli: "Выпечка", nav_drinks: "Напитки", 
+        menu_label: "Меню", hero_title: "Добро пожаловать в дукан", hero_tagline: "Грузинский вкус", 
+        footer_text: "© 2026 Ресторан «Пиросмани»"
+    }
 };
 
 const menuItemsData = {
     cold: [
-        { name: {ka: "სტეიკის სალათი", en: "Assorted Pkhali", ru: "Ассорти Пхали"}, price: "22₾", desc: {ka: "ისპანახი, ჭარხალი, სტაფილო ნიგვზით", en: "Spinach, beetroot, carrot with walnuts", ru: "Шпинат, свекла, морковь с орехами"}, img: "image/kerdzi-civi1.jpg" },
-        { name: {ka: "ყველის დაფა", en: "Cheese Board", ru: "Сырное ассорти"}, price: "28₾", desc: {ka: "იმერული, სულგუნი, გუდა", en: "Imeretian, Sulguni, Guda", ru: "Имеретинский, сулугуни, гуда"}, img: "image/placeholder.png" },
-        { name: {ka: "ბადრიჯანი ნიგვზით", en: "Eggplant with Walnuts", ru: "Баклажаны с орехами"}, price: "15₾", desc: {ka: "ნიგვზის საკაზმით და ბროწეულით", en: "With walnut filling and pomegranate", ru: "С ореховой начинкой и гранатом"}, img: "image/placeholder.png" },
-        { name: {ka: "ქართული სალათი", en: "Georgian Salad", ru: "Грузинский салат"}, price: "12₾", desc: {ka: "კიტრი, პომიდორი და კახური ზეთი", en: "Cucumber, tomato and Kakhetian oil", ru: "Огурцы, помидоры и кахетинское масло"}, img: "image/placeholder.png" },
-        { name: {ka: "ნადუღი", en: "Nadughi", ru: "Надуги"}, price: "14₾", desc: {ka: "პიტნით სულგუნის ფირფიტებში", en: "With mint in sulguni leaves", ru: "С мятой в листах сулугуни"}, img: "image/placeholder.png" },
-        { name: {ka: "მჟავის ასორტი", en: "Assorted Pickles", ru: "Ассорти солений"}, price: "10₾", desc: {ka: "ჯონჯოლი, კიტრი, წიწაკა", en: "Jonjoli, cucumber, pepper", ru: "Джонджоли, огурцы, перец"}, img: "image/placeholder.png" },
-        { name: {ka: "კუჭმაჭი ნიგვზით", en: "Kuchmachi with Walnuts", ru: "Кучмачи с орехами"}, price: "16₾", desc: {ka: "მოხარშული შიგნეული ნიგვზით", en: "Cooked offal with walnuts", ru: "Отварные потроха с орехами"}, img: "image/placeholder.png" },
-        { name: {ka: "გებჟალია", en: "Gebjalia", ru: "Гебжалия"}, price: "18₾", desc: {ka: "სულგუნის რულეტი პიტნით", en: "Sulguni roll with mint", ru: "Рулет из сулугуни с мятой"}, img: "image/placeholder.png" },
-        { name: {ka: "მწვანე ლობიო", en: "Green Beans", ru: "Зеленая фасоль"}, price: "12₾", desc: {ka: "ნიგვზით და სუნელებით", en: "With walnuts and spices", ru: "С орехами и специями"}, img: "image/placeholder.png" },
-        { name: {ka: "ქათმის სალათი", en: "Chicken Salad", ru: "Куриный салат"}, price: "14₾", desc: {ka: "მაიონეზით და მწვანილებით", en: "With mayo and herbs", ru: "С майонезом и зеленью"}, img: "image/placeholder.png" }
+        { 
+            name: {
+            ka: "სტეიკის სალათი", // ქართული სახელი
+            en: "Steak Salad",     // ინგლისური სახელი
+            ru: "Салат со стейком" // რუსული სახელი
+        }, 
+        price: "25₾", // ფასიც შეგიძლია შეცვალო
+        desc: {
+            ka: "შემწვარი სტეიკი ბოსტნეულით", 
+            en: "Grilled steak with fresh vegetables", 
+            ru: "Жареный стейк со свежими овощами"
+        },
+            img: "image/kerdzi-civi1.jpg" 
+        },
+        { 
+            name: {ka: "ყველის დაფა", en: "Georgian Cheese Board", ru: "Сырное ассорти"}, 
+            price: "28₾", 
+            desc: {ka: "იმერული, სულგუნი და გუდა", en: "Imeretian, Sulguni, and Guda cheese", ru: "Имеретинский, сулугуни и гуда"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ბადრიჯანი ნიგვზით", en: "Eggplant with Walnuts", ru: "Баклажаны с орехами"}, 
+            price: "15₾", 
+            desc: {ka: "ნიგვზის საკაზმით და ბროწეულით", en: "With walnut filling and pomegranate", ru: "С ореховой начинкой и гранатом"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ქართული სალათი", en: "Georgian Salad", ru: "Грузинский салат"}, 
+            price: "12₾", 
+            desc: {ka: "კიტრი, პომიდორი და კახური ზეთი", en: "Cucumber, tomato, and Kakhetian oil", ru: "Огурцы, помидоры и кахетинское масло"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ნადუღი", en: "Nadughi in Sulguni", ru: "Надуги в сулугуни"}, 
+            price: "14₾", 
+            desc: {ka: "პიტნით სულგუნის ფირფიტებში", en: "Minted cottage cheese in sulguni leaves", ru: "Творожный сыр с мятой в листах сулугуни"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "მჟავის ასორტი", en: "Assorted Pickles", ru: "Ассорти солений"}, 
+            price: "10₾", 
+            desc: {ka: "ჯონჯოლი, კიტრი და წიწაკა", en: "Jonjoli, cucumber, and hot peppers", ru: "Джонджоли, огурцы и перец"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "კუჭმაჭი ნიგვზით", en: "Kuchmachi with Walnuts", ru: "Кучмачи с орехами"}, 
+            price: "16₾", 
+            desc: {ka: "მოხარშული შიგნეული ნიგვზით", en: "Traditional beef/pork offal with walnuts", ru: "Отварные потроха с грецким орехом"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "გებჟალია", en: "Gebjalia", ru: "Гебжалия"}, 
+            price: "18₾", 
+            desc: {ka: "სულგუნის რულეტი პიტნით", en: "Sulguni rolls with mint and matsoni", ru: "Рулетики из сулугуни с мятой в мацони"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "მწვანე ლობიო", en: "Green Beans with Walnuts", ru: "Зеленая фасоль с орехами"}, 
+            price: "12₾", 
+            desc: {ka: "ნიგვზით და სუნელებით", en: "With ground walnuts and Georgian spices", ru: "С грецким орехом и специями"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ქათმის სალათი", en: "Chicken Salad", ru: "Куриный салат"}, 
+            price: "14₾", 
+            desc: {ka: "მაიონეზით და ქართული სუნელებით", en: "With mayonnaise and Georgian herbs", ru: "С майонезом и грузинскими травами"}, 
+            img: "image/placeholder.png" 
+        }
     ],
     hot: [
-        { name: {ka: "ხინკალი", en: "Khinkali", ru: "Хинкали"}, price: "1.5₾", desc: {ka: "მოხეური, საქონლის და ღორის", en: "Classic with beef and pork", ru: "Классические с мясом"}, img: "image/placeholder.png" },
-        { name: {ka: "მწვადი ღორის", en: "Pork Mtsvadi", ru: "Свиной шашлык"}, price: "20₾", desc: {ka: "ნაკვერჩხალზე შემწვარი", en: "Grilled on coals", ru: "Приготовлено на углях"}, img: "image/placeholder.png" },
-        { name: {ka: "ჩაქაფული", en: "Chakapuli", ru: "Чакапули"}, price: "25₾", desc: {ka: "ხბოს ხორცი ტყემლით", en: "Veal with tkhali", ru: "Телятина с ткемали"}, img: "image/placeholder.png" },
-        { name: {ka: "შქმერული", en: "Shkmeruli", ru: "Шкмерули"}, price: "28₾", desc: {ka: "წიწილა ნივრიან სოუსში", en: "Chicken in garlic sauce", ru: "Цыпленок в чесночном соусе"}, img: "image/placeholder.png" },
-        { name: {ka: "ოჯახური", en: "Ojakhuri", ru: "Оджахури"}, price: "18₾", desc: {ka: "ხორცი შემწვარი კარტოფილით", en: "Meat with potatoes", ru: "Мясо с жареным картофелем"}, img: "image/placeholder.png" },
-        { name: {ka: "ჩაშუშული", en: "Chashushuli", ru: "Чашушули"}, price: "22₾", desc: {ka: "ხბოს ხორცი პომიდორში", en: "Veal in tomato sauce", ru: "Телятина в томате"}, img: "image/placeholder.png" },
-        { name: {ka: "ხბოს მწვადი", en: "Veal Mtsvadi", ru: "Телячий шашлык"}, price: "24₾", desc: {ka: "ნაზი ხბოს რბილი ხორცი", en: "Tender veal meat", ru: "Нежное телячье мясо"}, img: "image/placeholder.png" },
-        { name: {ka: "აფხაზურა", en: "Abkhazura", ru: "Абхазура"}, price: "16₾", desc: {ka: "შემწვარი კატლეტი", en: "Fried meatballs", ru: "Жареные котлеты"}, img: "image/placeholder.png" },
-        { name: {ka: "კუჭმაჭი ცხელი", en: "Hot Kuchmachi", ru: "Кучмачи горячий"}, price: "15₾", desc: {ka: "შიგნეული კეცზე", en: "Offal on ketsi", ru: "Потроха на кеци"}, img: "image/placeholder.png" },
-        { name: {ka: "სოკო კეცზე", en: "Mushrooms on Ketsi", ru: "Грибы на кеци"}, price: "12₾", desc: {ka: "სულგუნით ან მის გარეშე", en: "With sulguni", ru: "Грибы с сулугуни"}, img: "image/placeholder.png" }
+        { 
+            name: {ka: "ხინკალი", en: "Khinkali", ru: "Хинкали"}, 
+            price: "1.5₾", 
+            desc: {ka: "საქონლის და ღორის ხორცით (ცალი)", en: "With beef and pork (per piece)", ru: "С говядиной и свининой (за шт.)"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ღორის მწვადი", en: "Pork Mtsvadi", ru: "Свиной шашлык"}, 
+            price: "20₾", 
+            desc: {ka: "ნაკვერჩხალზე შემწვარი", en: "Traditional pork BBQ grilled on coals", ru: "Свиной шашлык, приготовленный на углях"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ჩაქაფული", en: "Chakapuli", ru: "Чакапули"}, 
+            price: "25₾", 
+            desc: {ka: "ხბოს ხორცი ტყემლით და მწვანილით", en: "Veal stew with tarragon and sour plums", ru: "Телятина с тархуном и ткемали"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "შქმერული", en: "Shkmeruli", ru: "Шкмерули"}, 
+            price: "28₾", 
+            desc: {ka: "წიწილა ნივრიან სოუსში", en: "Fried chicken in creamy garlic sauce", ru: "Цыпленок в чесночно-сливочном соусе"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ოჯახური", en: "Ojakhuri", ru: "Оджахури"}, 
+            price: "18₾", 
+            desc: {ka: "ღორის ხორცი შემწვარი კარტოფილით", en: "Fried pork with potatoes and onions", ru: "Жареная свинина с картофелем и луком"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ხბოს ჩაშუშული", en: "Veal Chashushuli", ru: "Чашушули из телятины"}, 
+            price: "22₾", 
+            desc: {ka: "ხბოს ხორცი პომიდვრის სოუსში", en: "Veal stewed in spicy tomato sauce", ru: "Телятина, тушенная в томатном соусе"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ხბოს მწვადი", en: "Veal Mtsvadi", ru: "Телячий шашлык"}, 
+            price: "24₾", 
+            desc: {ka: "ნაკვერჩხალზე შემწვარი ხბოს ხორცი", en: "Tender veal BBQ grilled on coals", ru: "Телячий шашлык на углях"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "აფხაზურა", en: "Abkhazura", ru: "Абхазура"}, 
+            price: "16₾", 
+            desc: {ka: "შემწვარი კატლეტი ბროწეულით", en: "Spicy meatballs with pomegranate", ru: "Острые котлеты с гранатом"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "კუჭმაჭი კეცზე", en: "Kuchmachi on Ketsi", ru: "Кучмачи на кеци"}, 
+            price: "15₾", 
+            desc: {ka: "შიგნეული სუნელებით და ბროწეულით", en: "Fried offal with spices and pomegranate", ru: "Жареные потроха со специями и гранатом"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "სოკო კეცზე", en: "Mushrooms on Ketsi", ru: "Грибы на кеци"}, 
+            price: "12₾", 
+            desc: {ka: "სულგუნით ან მის გარეშე", en: "Baked mushrooms with or without sulguni", ru: "Запеченные грибы с сулугуни или без"}, 
+            img: "image/placeholder.png" 
+        }
     ],
     tsomeuli: [
-        { name: {ka: "იმერული ხაჭაპური", en: "Imeretian Khachapuri", ru: "Имеретинский хачапури"}, price: "16₾", desc: {ka: "კლასიკური ყველით", en: "Classic with cheese", ru: "С сыром"}, img: "image/placeholder.png" },
-        { name: {ka: "აჭარული", en: "Adjaruli", ru: "Аджарули"}, price: "18₾", desc: {ka: "კვერცხით და კარაქით", en: "With egg and butter", ru: "С яйцом и маслом"}, img: "image/placeholder.png" },
-        { name: {ka: "ლობიანი", en: "Lobiani", ru: "Лобиани"}, price: "12₾", desc: {ka: "ლორით ან მის გარეშე", en: "With beans", ru: "С фасолью"}, img: "image/placeholder.png" },
-        { name: {ka: "მეგრული ხაჭაპური", en: "Megrelian Khachapuri", ru: "Мегрельский хачапури"}, price: "20₾", desc: {ka: "ორმაგი ყველით", en: "With double cheese", ru: "С двойным сыром"}, img: "image/placeholder.png" },
-        { name: {ka: "ხაბიზგინა", en: "Khabizgina", ru: "Хабизгина"}, price: "17₾", desc: {ka: "კარტოფილით და ყველით", en: "Potato and cheese", ru: "С картофелем"}, img: "image/placeholder.png" },
-        { name: {ka: "მჭადი", en: "Mchadi", ru: "Мчади"}, price: "2₾", desc: {ka: "სიმინდის კვერი", en: "Cornbread", ru: "Кукурузная лепешка"}, img: "image/placeholder.png" },
-        { name: {ka: "ჭვიშტარი", en: "Chvishtari", ru: "Чвиштари"}, price: "5₾", desc: {ka: "მჭადი ყველით", en: "Cornbread with cheese", ru: "Лепешка с сыром"}, img: "image/placeholder.png" },
-        { name: {ka: "ლემზირი", en: "Lemziri", ru: "Лемзири"}, price: "14₾", desc: {ka: "სვანური ტრადიციული", en: "Traditional Svan", ru: "Сванский хлеб"}, img: "image/placeholder.png" },
-        { name: {ka: "კუბდარი", en: "Kubdari", ru: "Кубдари"}, price: "18₾", desc: {ka: "ხორცის გულსართით", en: "Meat filled", ru: "С мясом"}, img: "image/placeholder.png" },
-        { name: {ka: "პური (შოთი)", en: "Bread", ru: "Хлеб"}, price: "2₾", desc: {ka: "თონეში გამომცხვარი", en: "In tone", ru: "Из тонэ"}, img: "image/placeholder.png" }
+        { 
+            name: {ka: "იმერული ხაჭაპური", en: "Imeretian Khachapuri", ru: "Имеретинский хачапури"}, 
+            price: "16₾", 
+            desc: {ka: "კლასიკური ხაჭაპური ყველით", en: "Traditional Georgian cheese bread", ru: "Классический хачапури с сыром"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "აჭარული ხაჭაპური", en: "Adjaruli Khachapuri", ru: "Хачапури по-аджарски"}, 
+            price: "18₾", 
+            desc: {ka: "ნედლი ყველით და კვერცხით", en: "Boat-shaped bread with cheese and egg", ru: "Хачапури-лодочка с сыром и яйцом"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ლობიანი", en: "Lobiani", ru: "Лобиани"}, 
+            price: "12₾", 
+            desc: {ka: "ლორით ან მის გარეშე", en: "Bean-filled bread with or without ham", ru: "Лепешка с фасолью (с ветчиной или без)"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "მეგრული ხაჭაპური", en: "Megrelian Khachapuri", ru: "Мегрельский хачапури"}, 
+            price: "20₾", 
+            desc: {ka: "ორმაგი ყველით", en: "With extra cheese on top", ru: "С двойным сыром сверху"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ხაბიზგინა", en: "Khabizgina", ru: "Хабизгина"}, 
+            price: "17₾", 
+            desc: {ka: "კარტოფილით და ყველით", en: "Ossetian bread with potato and cheese", ru: "Осетинский хачапури с картофелем и сыром"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "მჭადი", en: "Mchadi", ru: "Мчади"}, 
+            price: "2₾", 
+            desc: {ka: "სიმინდის კვერი", en: "Traditional Georgian cornbread", ru: "Традиционная кукурузная лепешка"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ჭვიშტარი", en: "Chvishtari", ru: "Чвиштари"}, 
+            price: "5₾", 
+            desc: {ka: "მჭადი ყველით", en: "Cornbread baked with cheese", ru: "Лепешка с сыром внутри"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ლემზირი", en: "Lemziri", ru: "Лемзири"}, 
+            price: "14₾", 
+            desc: {ka: "სვანური რიტუალური პური", en: "Traditional ritual bread from Svaneti", ru: "Традиционный сванский ритуальный хлеб"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "კუბდარი", en: "Kubdari", ru: "Кубдари"}, 
+            price: "18₾", 
+            desc: {ka: "ხორცის გულსართით", en: "Meat-filled bread with Svan spices", ru: "Лепешка с мясом и сванскими специями"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "შოთის პური", en: "Shoti Bread", ru: "Хлеб Шоти"}, 
+            price: "2₾", 
+            desc: {ka: "თონეში გამომცხვარი", en: "Traditional bread baked in a clay oven", ru: "Традиционный хлеб из глиняной печи"}, 
+            img: "image/placeholder.png" 
+        }
     ],
     drinks: [
-        { name: {ka: "საფერავი (0.75ლ)", en: "Saperavi", ru: "Саперави"}, price: "45₾", desc: {ka: "ქვევრის მშრალი", en: "Qvevri dry", ru: "Сухое из квеври"}, img: "image/placeholder.png" },
-        { name: {ka: "წინანდალი (0.75ლ)", en: "Tsinandali", ru: "Цинандали"}, price: "35₾", desc: {ka: "თეთრი მშრალი", en: "White dry", ru: "Белое сухое"}, img: "image/placeholder.png" },
-        { name: {ka: "ბორჯომი", en: "Borjomi", ru: "Боржоми"}, price: "3₾", desc: {ka: "მინერალური წყალი", en: "Mineral water", ru: "Минеральная вода"}, img: "image/placeholder.png" },
-        { name: {ka: "ნაბეღლავი", en: "Nabeghlavi", ru: "Набеглави"}, price: "3₾", desc: {ka: "გაზიანი წყალი", en: "Sparkling water", ru: "Газированная вода"}, img: "image/placeholder.png" },
-        { name: {ka: "ნატახტარი", en: "Natakhtari", ru: "Натахтари"}, price: "4₾", desc: {ka: "ლიმონათი", en: "Lemonade", ru: "Лимонад"}, img: "image/placeholder.png" },
-        { name: {ka: "ჩაი", en: "Tea", ru: "Чай"}, price: "5₾", desc: {ka: "შავი ან მწვანე", en: "Black or green", ru: "Черный или зеленый"}, img: "image/placeholder.png" },
-        { name: {ka: "ყავა თურქული", en: "Turkish Coffee", ru: "Кофе по-турецки"}, price: "5₾", desc: {ka: "ქვიშაზე", en: "On sand", ru: "На песке"}, img: "image/placeholder.png" },
-        { name: {ka: "ლუდი", en: "Beer", ru: "Пиво"}, price: "6₾", desc: {ka: "ჩამოსასხმელი", en: "Draft", ru: "Разливное"}, img: "image/placeholder.png" },
-        { name: {ka: "არაყი (0.1ლ)", en: "Vodka", ru: "Водка"}, price: "8₾", desc: {ka: "ჭაჭა", en: "Chacha", ru: "Чача"}, img: "image/placeholder.png" },
-        { name: {ka: "ხილის წვენი", en: "Fruit Juice", ru: "Фруктовый сок"}, price: "10₾", desc: {ka: "ნატურალური", en: "Natural", ru: "Натуральный"}, img: "image/placeholder.png" }
+        { 
+            name: {ka: "საფერავი (0.75ლ)", en: "Saperavi (0.75L)", ru: "Саперави (0.75л)"}, 
+            price: "45₾", 
+            desc: {ka: "ქვევრის მშრალი წითელი", en: "Premium Qvevri dry red wine", ru: "Красное сухое вино из квеври"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "წინანდალი (0.75ლ)", en: "Tsinandali (0.75L)", ru: "Цинандали (0.75л)"}, 
+            price: "35₾", 
+            desc: {ka: "თეთრი მშრალი ღვინო", en: "Traditional dry white wine", ru: "Белое сухое вино"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ბორჯომი", en: "Borjomi", ru: "Боржоми"}, 
+            price: "3₾", 
+            desc: {ka: "მინერალური წყალი", en: "Sparkling mineral water", ru: "Минеральная вода"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ნაბეღლავი", en: "Nabeghlavi", ru: "Набеглави"}, 
+            price: "3₾", 
+            desc: {ka: "გაზიანი მინერალური წყალი", en: "Natural sparkling water", ru: "Газированная вода"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ნატახტარი", en: "Natakhtari Lemonade", ru: "Лимонад Натахтари"}, 
+            price: "4₾", 
+            desc: {ka: "ასორტი", en: "Assorted flavors", ru: "В ассортименте"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ჩაი", en: "Tea", ru: "Чай"}, 
+            price: "5₾", 
+            desc: {ka: "შავი ან მწვანე", en: "Black or green Georgian tea", ru: "Черный или зеленый чай"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ყავა ქვიშაზე", en: "Sand-Brewed Coffee", ru: "Кофе на песке"}, 
+            price: "5₾", 
+            desc: {ka: "ტრადიციული მეთოდით", en: "Traditionally brewed Turkish coffee", ru: "Кофе по-турецки на песке"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ლუდი", en: "Local Beer", ru: "Местное пиво"}, 
+            price: "6₾", 
+            desc: {ka: "ქართული ჩამოსასხმელი", en: "Fresh Georgian draft beer", ru: "Свежее грузинское разливное пиво"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ჭაჭა (0.1ლ)", en: "Chacha (0.1L)", ru: "Чача (0.1л)"}, 
+            price: "8₾", 
+            desc: {ka: "ქართული ტრადიციული არაყი", en: "Traditional Georgian pomace brandy", ru: "Традиционная грузинская чача"}, 
+            img: "image/placeholder.png" 
+        },
+        { 
+            name: {ka: "ხილის წვენი", en: "Fresh Juice", ru: "Свежий сок"}, 
+            price: "10₾", 
+            desc: {ka: "ნატურალური", en: "100% Natural assorted juice", ru: "Натуральный сок в ассортименте"}, 
+            img: "image/placeholder.png" 
+        }
     ]
 };
 
